@@ -1,6 +1,6 @@
 # exposed ports
 ports:
-- port: 8090
+- port: 8090 
   onOpen: ignore
 - port: 8983 #solr
   onOpen: ignore
@@ -25,5 +25,5 @@ tasks:
   - init: |
       cd docker-compose && docker-compose up --no-start && cd ..
     command: |
-      cd docker-compose && docker-compose run
-  - command: gp await-port 8080 && gp preview "$(gp url 8080)/alfresco"
+      cd docker-compose && docker-compose up
+  - command: gp await-port 8080 && sleep 5 && gp preview "$(gp url 8080)/alfresco"
