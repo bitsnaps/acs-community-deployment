@@ -1,5 +1,29 @@
+# exposed ports
+ports:
+- port: 8090
+  onOpen: ignore
+- port: 8983 #solr
+  onOpen: ignore
+- port: 8083
+  onOpen: ignore
+- port: 8161 # Web Console
+  onOpen: ignore
+- port: 5672 # AMQP
+  onOpen: ignore
+- port: 61616 # OpenWire
+  onOpen: ignore
+- port: 61613 # STOMP
+  onOpen: ignore
+- port: 8161 # Web Console
+  onOpen: ignore
+- port: 5432 # PostgreSQL
+  onOpen: ignore
+- port: 8080 # Alfresco
+  onOpen: open-browser
+
 tasks:
   - init: |
-      cd docker-compose && docker-compose build && cd ..
-    command:
-      docker-compose run
+      cd docker-compose && docker-compose up --no-start && cd ..
+    command: |
+      cd docker-compose && docker-compose run
+  - command: gp await-port 8080 && gp preview "$(gp url 8080)/alfresco"
