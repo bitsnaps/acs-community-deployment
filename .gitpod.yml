@@ -1,0 +1,5 @@
+tasks:
+  - init: |
+      cd docker-compose && docker-compose build && cd ..
+    command:
+      docker-compose run
