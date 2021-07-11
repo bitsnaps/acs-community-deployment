@@ -3,6 +3,8 @@
 
 **NOTE: This repository is now deprecated and archived as the  [https://github.com/Alfresco/acs-deployment](https://github.com/Alfresco/acs-deployment) repository is now the centralized place to find containerized deployment artefacts and documentation.**
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/bitsnaps/acs-community-deployment/tree/gitpod-setup)
+
 The Docker Compose deployment instructions can be found [here](https://github.com/Alfresco/acs-deployment/blob/master/docs/docker-compose/README.md) and the Helm deployment instructions can be found [here](https://github.com/Alfresco/acs-deployment/blob/master/docs/helm/README.md).
 
 ***
