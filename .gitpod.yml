@@ -1,10 +1,8 @@
 # exposed ports
 ports:
-- port: 8090 
+- port: 8090 # transform-core-aio
   onOpen: ignore
-- port: 8983 #solr
-  onOpen: ignore
-- port: 8083
+- port: 8083 #solr
   onOpen: ignore
 - port: 8161 # Web Console
   onOpen: ignore
