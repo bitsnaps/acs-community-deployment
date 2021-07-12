@@ -23,6 +23,7 @@ services:
                 -Dsolr.secureComms=none
                 -Dsolr.base.url=/solr
                 -Dindex.subsystem.name=solr6
+                # You may use $GITPOD_WORKSPACE_URL for gitpod                
                 -Dshare.host=127.0.0.1
                 -Dshare.port=8080
                 -Dalfresco.host=localhost
