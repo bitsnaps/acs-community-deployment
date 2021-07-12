@@ -13,6 +13,7 @@ services:
         image: alfresco/alfresco-content-repository-community:6.2.1-A8
         mem_limit: 1500m
         environment:
+            # The share.host argument is causing an issue on Gitpod
             JAVA_OPTS: "
                 -Ddb.driver=org.postgresql.Driver
                 -Ddb.username=alfresco
@@ -23,7 +24,6 @@ services:
                 -Dsolr.secureComms=none
                 -Dsolr.base.url=/solr
                 -Dindex.subsystem.name=solr6
-                # You may use $GITPOD_WORKSPACE_URL for gitpod                
                 -Dshare.host=127.0.0.1
                 -Dshare.port=8080
                 -Dalfresco.host=localhost
@@ -31,15 +31,12 @@ services:
                 -Daos.baseUrlOverwrite=http://localhost:8080/alfresco/aos
                 -Dmessaging.broker.url=\"failover:(nio://activemq:61616)?timeout=3000&jms.useCompression=true\"
                 -Ddeployment.method=DOCKER_COMPOSE
-
                 -DlocalTransform.core-aio.url=http://transform-core-aio:8090/
-
                 -Dalfresco-pdf-renderer.url=http://transform-core-aio:8090/
                 -Djodconverter.url=http://transform-core-aio:8090/
                 -Dimg.url=http://transform-core-aio:8090/
                 -Dtika.url=http://transform-core-aio:8090/
                 -Dtransform.misc.url=http://transform-core-aio:8090/
-
                 -Dcsrf.filter.enabled=false
                 -Xms1500m -Xmx1500m
                 "
